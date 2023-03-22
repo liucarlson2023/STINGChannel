@@ -1,0 +1,58 @@
+PROCESS_DIRECTORY: '/home/rcarlson/mountb/Channel/Calibration/Rep2/process' 
+MODE: 'process'
+#MODE: 'paramsearch_segmentation' 
+REQUESTED_FILES: []
+REQUESTED_TAGS: ['ratio.tif'] #pheno.csv
+TEMP_TAGS: []
+
+### INPUT TO ANALYSIS
+WELLS: ['A4','B4','C4']
+TILES: ['0',
+ '1',
+ '2',
+ '3',
+ '4',
+ '5',
+ '6',
+ '7',
+ '8',
+ '9',
+ '10',
+ '11',
+ '12',
+ '13',
+ '14',
+ '15'
+]
+INPUT_DIRECTORY: '/home/rcarlson/mountb/Channel/Calibration/Rep2'
+INCLUDE_WELLS_TILES: 'all'
+MAGNIFICATION: '40X'
+CYCLES: ['7_5','7','6_5','6','5_5','5','4_5'] # cycles to include for analysis
+CYCLE_FORMAT: 'pH_{cycle}' # python format string
+INPUT_TAG: 'nd2'
+CHANNELS: '405,488,561'
+
+### ANALYSIS PARAMETERS
+NUCLEUS_AREA: [800, 30000] # min and max nucleus area in pixels
+THRESHOLD_DAPI: [800]  # threshold for segmenting nuclei
+THRESHOLD_CELL: [120]  # threshold for segmenting cells
+SEGMENT_METHOD: 'cell_2019_select_channels'
+SMOOTH: 12
+RADIUS: 100
+SEGMENT_CHSTART: 2
+SEGMENT_CHEND: 3
+
+
+### DISPLAY OPTIONS
+DISPLAY_RANGES:
+  HOECHST: [200, 2500]
+  SEP: [100, 1500]
+  mRuby3: [100, 600]
+  Ratio: [1, 8]
+
+LUTS:
+  HOECHST: 'GRAY'
+  SEP: 'GREEN'
+  mRuby3: 'MAGENTA'
+  Ratio: 'CYAN'
+

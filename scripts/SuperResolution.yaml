@@ -1,0 +1,34 @@
+PROCESS_DIRECTORY: '/home/rcarlson/mountb/Channel/SuperResolution/process' 
+MODE: 'process'
+#MODE: 'paramsearch_segmentation' 
+REQUESTED_FILES: []
+REQUESTED_TAGS: ['pheno_golgi.csv']
+TEMP_TAGS: []
+
+### INPUT TO ANALYSIS
+WELLS: ['B7','B6','B8a','B8b','B9a']
+INPUT_DIRECTORY: '/home/rcarlson/mountb/Channel/SuperResolution'
+INCLUDE_WELLS_TILES: 'all'
+MAGNIFICATION: '63X'
+INPUT_TAG: 'tif'
+
+### ANALYSIS PARAMETERS
+GOLGI_CHANNEL: 1
+GOLGI_RADIUS: 4
+GOLGI_THRESHOLD: 200 
+GOLGI_AREA: [20,200]
+GOLGI_AXIS: 2
+
+### DISPLAY OPTIONS
+DISPLAY_RANGES:
+  SEP: [100, 750]
+  mRuby3: [100, 1000]
+  STING: [100, 1000]
+  Ratio: [1, 3]
+
+LUTS:
+  SEP: 'GREEN'
+  mRuby3: 'MAGENTA'
+  STING: 'CYAN'
+  Ratio: 'GRAY'
+

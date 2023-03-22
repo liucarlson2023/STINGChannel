@@ -1,0 +1,70 @@
+PROCESS_DIRECTORY: '/home/rcarlson/mountb/Channel/Inflammasome/Rep3/process' 
+MODE: 'process'
+#MODE: 'paramsearch_segmentation' 
+REQUESTED_FILES: []
+REQUESTED_TAGS: ['pheno_cells.csv']
+TEMP_TAGS: []
+
+### INPUT TO ANALYSIS
+WELLS: ['A4','A5','A6']
+TILES: [
+ '0',
+ '1',
+ '2',
+ '3',
+ '4',
+ '5',
+ '6',
+ '7',
+ '8',
+ '9',
+ '10',
+ '11',
+ '12',
+ '13',
+ '14',
+ '15',
+ '16',
+ '17',
+ '18',
+ '19',
+ '20',
+ '21',
+ '22',
+ '23',
+ '24'
+ ]
+INPUT_DIRECTORY: '/home/rcarlson/mountb/Channel/Inflammasome/Rep3'
+INCLUDE_WELLS_TILES: 'all'
+MAGNIFICATION: '60X'
+INPUT_TAG: 'nd2'
+CHANNELS: 'DAPI,488 nm,561 nm,640 nm'
+
+### ANALYSIS PARAMETERS
+NUCLEUS_AREA: [8000, 70000] # min and max nucleus area in pixels
+THRESHOLD_DAPI: [120]  # threshold for segmenting nuclei
+THRESHOLD_CELL: [300]  # threshold for segmenting cells
+SEGMENT_METHOD: 'cell_2019_select_channels'
+SMOOTH: 35
+RADIUS: 120
+SEGMENT_CHSTART: 1 ## NLRP3
+SEGMENT_CHEND: 2
+PUNCTA_CHANNEL: 2
+PUNCTA_RADIUS: 100 ## PSTING
+PUNCTA_THRESHOLD: 800
+PUNCTA_AREA: [700,20000]
+PUNCTA_SMOOTH: 10
+PSTING_THRESHOLD: 800
+
+### DISPLAY OPTIONS
+DISPLAY_RANGES:
+  DAPI: [100, 5000]
+  NLRP3: [100, 3800]
+  PSTING: [100, 1100]
+  STING: [100, 2700]
+LUTS:
+  DAPI: 'GRAY'
+  NLRP3: 'GREEN'
+  PSTING: 'MAGENTA'
+  STING: 'CYAN'
+

@@ -1,0 +1,55 @@
+PROCESS_DIRECTORY: '/home/rcarlson/mountb/Channel/LiveCell_C53/Rep1/process' 
+MODE: 'process'
+REQUESTED_FILES: []
+REQUESTED_TAGS: ['ratio.tif'] # ['pheno.csv','pheno_tracked.csv']
+TEMP_TAGS: []
+
+### INPUT TO ANALYSIS
+WELLS: ['A2','A3','A4','A5','A6','B2','B3','B4',
+        'C2','C3','C4','C5','C6','D2','D3','D4']
+TILES: ['0',
+ '1',
+ '2',
+ '3',
+ '4',
+ '5',
+ '6',
+ '7',
+ '8',
+ '9',
+ '10',
+ '11',
+ '12',
+ '13',
+ '14',
+ '15'
+]
+INPUT_DIRECTORY: '/home/rcarlson/mountb/Channel/LiveCell_C53/Rep1'
+INCLUDE_WELLS_TILES: 'all'
+MAGNIFICATION: '40X'
+INPUT_TAG: 'nd2'
+CHANNELS: '405,488,561'
+
+### ANALYSIS PARAMETERS
+NUCLEUS_AREA: [800, 30000] # min and max nucleus area in pixels
+THRESHOLD_DAPI: [300]  # threshold for segmenting nuclei
+THRESHOLD_CELL: [120]  # threshold for segmenting cells
+SMOOTH: 12
+RADIUS: 100
+SEGMENT_CHSTART: 2
+SEGMENT_CHEND: 3
+
+
+### DISPLAY OPTIONS
+DISPLAY_RANGES:
+  HOECHST: [200, 1500]
+  SEP: [100, 1500]
+  mRuby3: [100, 600]
+  Ratio: [1, 8]
+
+LUTS:
+  HOECHST: 'GRAY'
+  SEP: 'GREEN'
+  mRuby3: 'MAGENTA'
+  Ratio: 'CYAN'
+
